@@ -2,13 +2,25 @@
 const { tag } = Astro.props;
 ---
 
-<a href=`/tags/${tag}`>{tag}</a>
+<div class='tags'>
+   <p class='tag'><a href=`/tags/${tag}`>{tag}</a></p>
+</div>
 <style>
    a {
-      margin: 0.25em;
-      padding: 0.5rem 1rem;
-      color: white;
-      background-color: #1d3395;
+      color: #00539f;
       text-decoration: none;
+   }
+
+   .tags {
+      display: inline-block;
+   }
+
+   .tag {
+      margin: 0.25em;
+      border: dotted 1px #a1a1a1;
+      border-radius: 0.5em;
+      padding: 0.5em 1em;
+      font-size: 1.15em;
+      background-color: #f8fcfd;
    }
 </style>
