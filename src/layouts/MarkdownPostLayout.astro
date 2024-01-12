@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import TagItem from "../components/TagItem.astro";
+import { fade } from "astro:transitions";
 
 const { frontmatter } = Astro.props;
 ---
@@ -15,7 +16,9 @@ const { frontmatter } = Astro.props;
       <strong>Tags:</strong>
       {frontmatter.tags.map((tag: any) => <TagItem tag={tag} />)}
    </div>
-   <p><em>{frontmatter.description}</em></p>
+   <p transition:animate={fade({ duration: '1s' })}>
+      <em>{frontmatter.description}</em>
+   </p>
    <img src={frontmatter.image.url} width='300' alt={frontmatter.image.alt} />
    <slot />
 </BaseLayout>

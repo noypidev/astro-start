@@ -1,8 +1,10 @@
 ---
+import { fade } from "astro:transitions";
+
 
 ---
 
-<div class='nav-links'>
+<div class='nav-links' transition:animate={fade({duration: '2s'})}>
    <a href='/'>Home</a>
    <a href='/about/'>About</a>
    <a href='/blog/'>Blog</a>
